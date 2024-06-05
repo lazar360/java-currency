@@ -49,5 +49,16 @@ public class Main {
         System.out.println("formattedValue rounded.UP of 123456.785d = " + formattedValue1);  // Output: $123456.79
         System.out.println("formattedValue rounded.UP of 123456.786d = " + formattedValue2);  // Output: $123456.79
 
+        // 4- handling currency round for euro
+        NumberFormat roundedCurrencyFormatEur = NumberFormat.getCurrencyInstance();
+        roundedCurrencyFormatEur.setRoundingMode(RoundingMode.HALF_UP);
+        formattedValue = roundedCurrencyFormatEur.format(123456.784d);
+        formattedValue1 = roundedCurrencyFormatEur.format(123456.785d);
+        formattedValue2 = roundedCurrencyFormatEur.format(123456.786d);
+        System.out.println("formattedValue rounded.HALF_UP of 123456.784d = " + formattedValue);  // Output: $123456.79
+        System.out.println("formattedValue rounded.HALF_UP of 123456.785d = " + formattedValue1);  // Output: $123456.79
+        System.out.println("formattedValue rounded.HALF_UP of 123456.786d = " + formattedValue2);  // Output: $123456.79
+
+
     }
 }
